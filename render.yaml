@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: encode-bot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: CRF
+        value: "23"
+      - key: PRESET
+        value: "medium"
+      - key: BOT_NAME
+        value: "ENCODE BOT BY @BOTSKINGDOMS"
